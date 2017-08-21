@@ -1,0 +1,24 @@
+{
+  "name": "address_converter",
+  "version": "1.0.0",
+  "description": "Convert vietnamese address to english address",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/congnt24/AddressConverter.git"
+  },
+  "keywords": [
+    "address"
+  ],
+  "author": "@congnt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/congnt24/AddressConverter/issues"
+  },
+  "homepage": "https://github.com/congnt24/AddressConverter#readme"
+}
