@@ -1,6 +1,6 @@
 {
   "name": "address_converter",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Convert vietnamese address to english address",
   "main": "index.js",
   "dependencies": {},
