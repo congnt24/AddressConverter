@@ -23,6 +23,7 @@ var numberMap = {
     "quan": "District",
     "phuong": "Ward",
     "duong": "Street",
+    "duong so": "Street",
     "to": "Group",
     "so": "No",
     "so nha": "No"
