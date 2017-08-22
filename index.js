@@ -1,33 +1,33 @@
 var map = {
-    "thanh pho": "City",
+    "thành phố": "City",
     "tp": "City",
     "tp.": "City",
     "t.p": "City",
-    "thi tran": "Town",
+    "thị trấn": "Town",
     "tt": "Town",
     "tt.": "Town",
-    "tinh": "Province",
-    "huyen": "District",
-    "quan": "District",
-    "xa": "Commune",
-    "thi xa": "Commune",
-    "thon": "Hamlet",
-    "phuong": "Ward",
-    "duong so": "Street",
-    "duong": "Street",
-    "ngach": "Alley",
-    "ngo": "Lane"
+    "tỉnh": "Province",
+    "huyện": "District",
+    "quận": "District",
+    "xã": "Commune",
+    "thị xã": "Commune",
+    "thôn": "Hamlet",
+    "phường": "Ward",
+    "đường số": "Street",
+    "đường": "Street",
+    "ngách": "Alley",
+    "ngõ": "Lane"
 };
 
 var numberMap = {
-    "huyen": "District",
-    "quan": "District",
-    "phuong": "Ward",
-    "duong so": "Street",
-    "duong": "Street",
-    "to": "Group",
-    "so": "No",
-    "so nha": "No"
+    "huyện": "District",
+    "quận": "District",
+    "phường": "Ward",
+    "đường số": "Street",
+    "đường": "Street",
+    "tổ": "Group",
+    "số": "No",
+    "số nhà": "No"
 };
 
 var flatWord = function (str) {
@@ -70,25 +70,25 @@ var convertMulti = function (str) {
 };
 var convert = function (str) {
     str = str.trim();
-    str = flatWord(str);
+    // str = flatWord(str);
     var keys = Object.keys(map);
     var numberKeys = Object.keys(numberMap);
     for (var i = 0; i < numberKeys.length; i++) {
         if (str.toLowerCase().startsWith(numberKeys[i])) {
             if (numberMap[numberKeys[i]] == 'No') {
-                return (numberMap[numberKeys[i]] + str.substring(numberKeys[i].length)).trim();
+                return flatWord((numberMap[numberKeys[i]] + str.substring(numberKeys[i].length)).trim());
             }
             if (str.split(/\s+/g).pop().match(/[0-9]+/g)) {
-                return (numberMap[numberKeys[i]] + str.substring(numberKeys[i].length)).trim();
+                return flatWord((numberMap[numberKeys[i]] + str.substring(numberKeys[i].length)).trim());
             }
         }
     }
     for (var i = 0; i < keys.length; i++) {
         if (str.toLowerCase().startsWith(keys[i])) {
-            return (str.substring(keys[i].length) + " " + map[keys[i]]).trim();
+            return flatWord((str.substring(keys[i].length) + " " + map[keys[i]]).trim());
         }
     }
-    return str;
+    return flatWord(str);
 };
 
 module.exports = {convertMulti: convertMulti, convert: convert}
