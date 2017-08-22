@@ -1,33 +1,33 @@
 var map = {
-    "thành phố": "City",
-    "tp": "City",
-    "tp.": "City",
-    "t.p": "City",
-    "thị trấn": "Town",
-    "tt": "Town",
-    "tt.": "Town",
-    "tỉnh": "Province",
-    "huyện": "District",
-    "quận": "District",
-    "xã": "Commune",
-    "thị xã": "Commune",
-    "thôn": "Hamlet",
-    "phường": "Ward",
-    "đường số": "Street",
-    "đường": "Street",
-    "ngách": "Alley",
-    "ngõ": "Lane"
+    "thành phố ": "City",
+    "tp ": "City",
+    "tp. ": "City",
+    "t.p ": "City",
+    "thị trấn ": "Town",
+    "tt ": "Town",
+    "tt. ": "Town",
+    "tỉnh ": "Province",
+    "huyện ": "District",
+    "quận ": "District",
+    "xã ": "Commune",
+    "thị xã ": "Commune",
+    "thôn ": "Hamlet",
+    "phường ": "Ward",
+    "đường số ": "Street",
+    "đường ": "Street",
+    "ngách ": "Alley",
+    "ngõ ": "Lane"
 };
 
 var numberMap = {
-    "huyện": "District",
-    "quận": "District",
-    "phường": "Ward",
-    "đường số": "Street",
-    "đường": "Street",
-    "tổ": "Group",
-    "số": "No",
-    "số nhà": "No"
+    "huyện ": "District",
+    "quận ": "District",
+    "phường ": "Ward",
+    "đường số ": "Street",
+    "đường ": "Street",
+    "tổ ": "Group",
+    "số ": "No",
+    "số nhà ": "No"
 };
 
 var flatWord = function (str) {
