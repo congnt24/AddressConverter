@@ -1,23 +1,30 @@
 var map = {
-    "thanh pho": "city",
-    "tinh": "province",
-    "huyen": "district",
-    "quan": "district",
-    "xa": "commune",
-    "thi xa": "commune",
-    "thon": "hamlet",
-    "phuong": "ward",
-    "duong": "street",
-    "ngach": "alley",
-    "ngo": "lane"
+    "thanh pho": "City",
+    "tp": "City",
+    "tp.": "City",
+    "t.p": "City",
+    "thi tran": "Town",
+    "tt": "Town",
+    "tt.": "Town",
+    "tinh": "Province",
+    "huyen": "District",
+    "quan": "District",
+    "xa": "Commune",
+    "thi xa": "Commune",
+    "thon": "Hamlet",
+    "phuong": "Ward",
+    "duong": "Street",
+    "ngach": "Alley",
+    "ngo": "Lane"
 };
 
 var numberMap = {
-    "huyen": "district",
-    "quan": "district",
-    "phuong": "ward",
+    "huyen": "District",
+    "quan": "District",
+    "phuong": "Ward",
     "so nha": "No",
-    "duong": "street"
+    "duong": "Street",
+    "to": "Group"
 };
 
 var flatWord = function (str) {
