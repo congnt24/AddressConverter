@@ -2,6 +2,7 @@ var map = {
     "thành phố ": "City",
     "tp ": "City",
     "tp. ": "City",
+    "tp.": "City",
     "t.p ": "City",
     "thị trấn ": "Town",
     "tt ": "Town",
