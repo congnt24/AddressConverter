@@ -4,6 +4,7 @@ var map = {
     "huyen": "district",
     "quan": "district",
     "xa": "commune",
+    "thi xa": "commune",
     "thon": "hamlet",
     "phuong": "ward",
     "duong": "street",
