@@ -13,6 +13,7 @@ var map = {
     "thi xa": "Commune",
     "thon": "Hamlet",
     "phuong": "Ward",
+    "duong so": "Street",
     "duong": "Street",
     "ngach": "Alley",
     "ngo": "Lane"
@@ -22,8 +23,8 @@ var numberMap = {
     "huyen": "District",
     "quan": "District",
     "phuong": "Ward",
-    "duong": "Street",
     "duong so": "Street",
+    "duong": "Street",
     "to": "Group",
     "so": "No",
     "so nha": "No"
