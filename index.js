@@ -22,7 +22,6 @@ var numberMap = {
     "huyen": "District",
     "quan": "District",
     "phuong": "Ward",
-    "so nha": "No",
     "duong": "Street",
     "to": "Group"
 };
@@ -52,7 +51,15 @@ var convertMulti = function (str) {
     if (arr.length > 1) {
         var tmpArr = [];
         for (var i = 0; i < arr.length; i++) {
-            tmpArr.push(convert(arr[i]))
+            if (i === 0) {
+                var str2 = arr[i].replace(/Ngõ/g, "Lane").replace(/ngõ/g, "Lane");
+                str2 = str2.replace(/Số/g, "").replace(/số/g, "");
+                str2 = str2.replace(/Nhà/g, "").replace(/nhà/g, "");
+                tmpArr.push(convert(str2))
+            }else{
+
+                tmpArr.push(convert(arr[i]))
+            }
         }
         return tmpArr.join(', ')
     } else {
