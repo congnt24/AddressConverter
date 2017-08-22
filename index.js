@@ -51,9 +51,9 @@ var convertMulti = function (str) {
     var arr = str.split(',');
     if (arr.length > 1) {
         var tmpArr = [];
-        arr.forEach(function (item) {
-            tmpArr.push(convert(item))
-        })
+        for (var i = 0; i < arr.length; i++) {
+            tmpArr.push(convert(arr[i]))
+        }
         return tmpArr.join(', ')
     } else {
         return convert(str)
@@ -64,18 +64,18 @@ var convert = function (str) {
     str = flatWord(str);
     var keys = Object.keys(map);
     var numberKeys = Object.keys(numberMap);
-    numberKeys.forEach(function (item, index) {
-        if (str.toLowerCase().startsWith(item)) {
+    for (var i = 0; i < numberKeys.length; i++) {
+        if (str.toLowerCase().startsWith(numberKeys[i])) {
             if (str.split(/\s+/g).pop().match(/[0-9]+/g)) {
-                return (numberMap[item] + str.substring(item.length)).trim();
+                return (numberMap[numberKeys[i]] + str.substring(numberKeys[i].length)).trim();
             }
         }
-    });
-    keys.forEach(function (item) {
-        if (str.toLowerCase().startsWith(item)) {
-            return (str.substring(item.length) + " " + map[item]).trim();
+    }
+    for (var i = 0; i < keys.length; i++) {
+        if (str.toLowerCase().startsWith(keys[i])) {
+            return (str.substring(keys[i].length) + " " + map[keys[i]]).trim();
         }
-    });
+    }
     return str;
 };
 
