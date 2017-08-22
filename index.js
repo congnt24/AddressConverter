@@ -23,7 +23,9 @@ var numberMap = {
     "quan": "District",
     "phuong": "Ward",
     "duong": "Street",
-    "to": "Group"
+    "to": "Group",
+    "so": "No",
+    "so nha": "No"
 };
 
 var flatWord = function (str) {
@@ -53,8 +55,6 @@ var convertMulti = function (str) {
         for (var i = 0; i < arr.length; i++) {
             if (i === 0) {
                 var str2 = arr[i].replace(/Ngõ/g, "Lane").replace(/ngõ/g, "Lane");
-                str2 = str2.replace(/Số/g, "").replace(/số/g, "");
-                str2 = str2.replace(/Nhà/g, "").replace(/nhà/g, "");
                 tmpArr.push(convert(str2))
             }else{
 
@@ -73,6 +73,9 @@ var convert = function (str) {
     var numberKeys = Object.keys(numberMap);
     for (var i = 0; i < numberKeys.length; i++) {
         if (str.toLowerCase().startsWith(numberKeys[i])) {
+            if (numberMap[numberKeys[i]] == 'No') {
+                return (numberMap[numberKeys[i]] + str.substring(numberKeys[i].length)).trim();
+            }
             if (str.split(/\s+/g).pop().match(/[0-9]+/g)) {
                 return (numberMap[numberKeys[i]] + str.substring(numberKeys[i].length)).trim();
             }
