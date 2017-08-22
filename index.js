@@ -51,9 +51,9 @@ var convertMulti = function (str) {
     var arr = str.split(',');
     if (arr.length > 1) {
         var tmpArr = [];
-        for (var index in arr) {
-            tmpArr.push(convert(arr[index]))
-        }
+        arr.forEach(function (item) {
+            tmpArr.push(convert(item))
+        })
         return tmpArr.join(', ')
     } else {
         return convert(str)
@@ -64,18 +64,18 @@ var convert = function (str) {
     str = flatWord(str);
     var keys = Object.keys(map);
     var numberKeys = Object.keys(numberMap);
-    for (var key in numberKeys) {
-        if (str.toLowerCase().startsWith(numberKeys[key])) {
+    numberKeys.forEach(function (item, index) {
+        if (str.toLowerCase().startsWith(item)) {
             if (str.split(/\s+/g).pop().match(/[0-9]+/g)) {
-                return (numberMap[numberKeys[key]] + str.substring(numberKeys[key].length)).trim();
+                return (numberMap[item] + str.substring(item.length)).trim();
             }
         }
-    }
-    for (var key in keys) {
-        if (str.toLowerCase().startsWith(keys[key])) {
-            return (str.substring(keys[key].length) + " " + map[keys[key]]).trim();
+    });
+    keys.forEach(function (item) {
+        if (str.toLowerCase().startsWith(item)) {
+            return (str.substring(item.length) + " " + map[item]).trim();
         }
-    }
+    });
     return str;
 };
 

@@ -1,5 +1,9 @@
 var converter = require('./index')
 
+Array.prototype.asdasd = function(){
+    console.log("ASdasd")
+}
+
 var arrs = ["Huyện Thanh Oai", "Huyện Chương Mỹ", "Thành Phố Hà Nội", "Tỉnh Thanh Hoá", "Xã Cao Viên"
     , "Quận Tân Bình, Thành phố Hồ Chí Minh"
     , "xã Hải Minh, huyện Hải Hậu, tỉnh Nam Định"
@@ -11,8 +15,7 @@ var arr2 = ["109, Mã Mây, Hàng Bạc, Quận Hoàn Kiếm, Hà Nội", "14, H
 , "TP Hồ chí minh", "60, Trần phú, Thành phố Nha Trang, Khánh Hòa", "60, Trần Phú, Lộc Thọ, Thành phố Nha Trang, Khánh Hòa"
 ,"Tổ 5, Ấp Cây Sao, Hàm Ninh, Huyện Phú Quốc, Kiên Giang"]
 // console.log(flatWord(arr[0]))
-for (var arr in arr2) {
-    if (typeof arr === 'string') {
-        console.log(converter.convertMulti(arr2[arr]))
-    }
+for (var arr of arr2) {
+
+    console.log(converter.convertMulti(arr))
 }
