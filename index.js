@@ -48,6 +48,12 @@ var flatWord = function (str) {
     str = str.replace(/[ÙÚỤỦŨƯỪỨỰỬỮ]/g, "U");
     str = str.replace(/[ỲÝỴỶỸ]/g, "Y");
     str = str.replace(/Đ/g, "D");
+    var rsAstralRange = '\\ud800-\\udfff',
+        rsComboMarksRange = '\\u0300-\\u036f',
+        reComboHalfMarksRange = '\\ufe20-\\ufe2f',
+        rsComboSymbolsRange = '\\u20d0-\\u20ff',
+        rsComboRange = '[' + rsAstralRange + rsComboMarksRange + reComboHalfMarksRange + rsComboSymbolsRange + ']';
+    str = str.replace(RegExp(rsComboRange, 'g'), '');
     return str
 };
 
@@ -59,7 +65,7 @@ var convertMulti = function (str) {
             if (i === 0) {
                 var str2 = arr[i].replace(/Ngõ/g, "Lane").replace(/ngõ/g, "Lane");
                 tmpArr.push(convert(str2))
-            }else{
+            } else {
 
                 tmpArr.push(convert(arr[i]))
             }
