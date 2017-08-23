@@ -7,6 +7,7 @@ var map = {
     "thị trấn ": "Town",
     "tt ": "Town",
     "tt. ": "Town",
+    "phố ": "Town",
     "tỉnh ": "Province",
     "huyện ": "District",
     "quận ": "District",
@@ -17,7 +18,8 @@ var map = {
     "đường số ": "Street",
     "đường ": "Street",
     "ngách ": "Alley",
-    "ngõ ": "Lane"
+    "ngõ ": "Lane",
+    "hẻm ": "Lane"
 };
 
 var numberMap = {
@@ -83,10 +85,10 @@ var convert = function (str) {
     for (var i = 0; i < numberKeys.length; i++) {
         if (str.toLowerCase().startsWith(numberKeys[i])) {
             if (numberMap[numberKeys[i]] == 'No') {
-                return flatWord((numberMap[numberKeys[i]] + str.substring(numberKeys[i].length)).trim());
+                return flatWord((numberMap[numberKeys[i]] + " " + str.substring(numberKeys[i].length)).trim());
             }
             if (str.split(/\s+/g).pop().match(/[0-9]+/g)) {
-                return flatWord((numberMap[numberKeys[i]] + str.substring(numberKeys[i].length)).trim());
+                return flatWord((numberMap[numberKeys[i]] + " " + str.substring(numberKeys[i].length)).trim());
             }
         }
     }
